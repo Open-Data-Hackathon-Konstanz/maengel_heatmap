@@ -1,0 +1,152 @@
+[
+    {
+      "Stadtteil":                  "Wallhausen",
+      "Meldungen":       17,
+      "Einwohnerzahl":              1123,
+      "Meldung pro Einwohner":      "0,015138023",
+      "Kaufkraft":                  "28844,7",
+      "Saldo Auswanderung":         -27,
+      "Arbeitslose":                14,
+      "Arbeitslosenquote":          "0,012466607"
+    },
+    {
+      "Stadtteil": "Dingelsdorf",
+      "Meldungen": 40,
+      "Einwohnerzahl": 2094,
+      "Meldung pro Einwohner": "0,019102197",
+      "Kaufkraft": "29119,63",
+      "Saldo Auswanderung": -5,
+      "Arbeitslose": 24,
+      "Arbeitslosenquote": "0,011461318"
+    },
+    {
+      "Stadtteil": "Dettingen",
+      "Meldungen": 65,
+      "Einwohnerzahl": 3270,
+      "Meldung pro Einwohner": "0,019877676",
+      "Kaufkraft": "27003,64",
+      "Saldo Auswanderung": -6,
+      "Arbeitslose": 37,
+      "Arbeitslosenquote": "0,011314985"
+    },
+    {
+      "Stadtteil": "Egg",
+      "Meldungen": 90,
+      "Einwohnerzahl": 763,
+      "Meldung pro Einwohner": "0,117955439",
+      "Kaufkraft": "26049,9",
+      "Saldo Auswanderung": 5,
+      "Arbeitslose": 28,
+      "Arbeitslosenquote": "0,036697248"
+    },
+    {
+      "Stadtteil": "Litzelstetten",
+      "Meldungen": 96,
+      "Einwohnerzahl": 3831,
+      "Meldung pro Einwohner": "0,025058731",
+      "Kaufkraft": "29864,07",
+      "Saldo Auswanderung": 2,
+      "Arbeitslose": 51,
+      "Arbeitslosenquote": "0,013312451"
+    },
+    {
+      "Stadtteil": "Staad",
+      "Meldungen": 136,
+      "Einwohnerzahl": 1793,
+      "Meldung pro Einwohner": "0,07585053",
+      "Kaufkraft": "31517,41",
+      "Saldo Auswanderung": -12,
+      "Arbeitslose": 28,
+      "Arbeitslosenquote": "0,015616286"
+    },
+    {
+      "Stadtteil": "Königsbau",
+      "Meldungen": 147,
+      "Einwohnerzahl": 6248,
+      "Meldung pro Einwohner": "0,023527529",
+      "Kaufkraft": "20020,7",
+      "Saldo Auswanderung": 159,
+      "Arbeitslose": 120,
+      "Arbeitslosenquote": "0,019206146"
+    },
+    {
+      "Stadtteil": "Paradies",
+      "Meldungen": 183,
+      "Einwohnerzahl": 6113,
+      "Meldung pro Einwohner": "0,029936202",
+      "Kaufkraft": "18470,84",
+      "Saldo Auswanderung": -57,
+      "Arbeitslose": 69,
+      "Arbeitslosenquote": "0,01128742"
+    },
+    {
+      "Stadtteil": "Industriegebiet",
+      "Meldungen": 246,
+      "Einwohnerzahl": 1093,
+      "Meldung pro Einwohner": "0,225068618",
+      "Kaufkraft": "18029,55",
+      "Saldo Auswanderung": 38,
+      "Arbeitslose": 45,
+      "Arbeitslosenquote": "0,041171089"
+    },
+    {
+      "Stadtteil": "Allmannsdorf",
+      "Meldungen": 271,
+      "Einwohnerzahl": 5341,
+      "Meldung pro Einwohner": "0,050739562",
+      "Kaufkraft": "29320,77",
+      "Saldo Auswanderung": -2,
+      "Arbeitslose": 53,
+      "Arbeitslosenquote": "0,009923235"
+    },
+    {
+      "Stadtteil": "Fürstenberg",
+      "Meldungen": 274,
+      "Einwohnerzahl": 12346,
+      "Meldung pro Einwohner": "0,022193423",
+      "Kaufkraft": "22126,68",
+      "Saldo Auswanderung": -30,
+      "Arbeitslose": 246,
+      "Arbeitslosenquote": "0,019925482"
+    },
+    {
+      "Stadtteil": "Petershausen-Ost",
+      "Meldungen": 290,
+      "Einwohnerzahl": 7273,
+      "Meldung pro Einwohner": "0,039873505",
+      "Kaufkraft": "28491,28",
+      "Saldo Auswanderung": 68,
+      "Arbeitslose": 69,
+      "Arbeitslosenquote": "0,009487144"
+    },
+    {
+      "Stadtteil": "Wollmatingen",
+      "Meldungen": 327,
+      "Einwohnerzahl": 6784,
+      "Meldung pro Einwohner": "0,048201651",
+      "Kaufkraft": "20979,76",
+      "Saldo Auswanderung": 11,
+      "Arbeitslose": 139,
+      "Arbeitslosenquote": "0,020489387"
+    },
+    {
+      "Stadtteil": "Altstadt",
+      "Meldungen": 534,
+      "Einwohnerzahl": 12116,
+      "Meldung pro Einwohner": "0,044073952",
+      "Kaufkraft": "23079,89",
+      "Saldo Auswanderung": 48,
+      "Arbeitslose": 241,
+      "Arbeitslosenquote": "0,019891053"
+    },
+    {
+      "Stadtteil": "Petershausen-West",
+      "Meldungen": 698,
+      "Einwohnerzahl": 16002,
+      "Meldung pro Einwohner": "0,043619548",
+      "Kaufkraft": "19086,63",
+      "Saldo Auswanderung": 107,
+      "Arbeitslose": 319,
+      "Arbeitslosenquote": "0,019935008"
+    }
+  ]

@@ -1,6 +1,7 @@
 import { loadModules } from 'esri-loader';
 import { useEffect, useState } from "react";
-
+import {useColorMode} from '@chakra-ui/react'
+import { geoJsonrenderer } from './geojsonrenderer';
 
 const renderer = {
     type: "heatmap",
@@ -8,9 +9,6 @@ const renderer = {
       { color: "rgba(63, 40, 102, 0)", ratio: 0 },
       { color: "#472b77", ratio: 0.083 },
       { color: "#4e2d87", ratio: 0.166 },
-      { color: "#563098", ratio: 0.249 },
-      { color: "#5d32a8", ratio: 0.332 },
-      { color: "#6735be", ratio: 0.415 },
       { color: "#7139d4", ratio: 0.498 },
       { color: "#7b3ce9", ratio: 0.581 },
       { color: "#853fff", ratio: 0.664 },
@@ -21,64 +19,110 @@ const renderer = {
     ],
     maxDensity: 0.1,
     minDensity: 0,
-    radius: 2
+    radius: 4
   };
 
-export const useCreateMap = (mapRef, url) => {
+
+  const cardStyle = {
+    "light": 'gray-vector',
+    "dark": {
+      portalItem: {
+        id: "466f3f43c231453c938c6776777b89e2"
+      }
+    }
+  }
+
+export const useCreateMap = (mapRef, url, option) => {
+  const geoJsonLayer = option?.geoJsonLayer || null
+
+  const template =  option?.template || {
+    title: "{district}//{main_cat}/{sub_cat}",
+    content: "\"{description}\" <br/> Eingestellt am {reported}, <br/> Geprüft am {checked} <br/>"
+  };
 
   const [viewState, setView] = useState(null)
+  const [layerState, setLayer] = useState(null)
+  const { colorMode } = useColorMode()
 
     useEffect(() => {
         let view;
 
         const initMap =async (ref) => {
-            const modules = ["esri/WebMap", "esri/views/MapView", "esri/layers/CSVLayer", "esri/widgets/Legend"];
+            const modules = [
+              "esri/WebMap", 
+              "esri/views/MapView", 
+              "esri/layers/CSVLayer", 
+              "esri/layers/GeoJSONLayer", 
+              "esri/widgets/Legend", 
+              "esri/renderers/SimpleRenderer",
+              "esri/symbols/SimpleFillSymbol"
+            ];
         
-            const template = {
-              title: "{id}",
-              content: "Eingestellt am {reported}, <br/> Behoben am {checked}"
-            };
 
-            const [WebMap, MapView, CSVLayer, Legend] = await loadModules(modules);
+
+            const [WebMap, MapView, CSVLayer, GeoJSONLayer, Legend, SimpleRenderer,
+              SimpleFillSymbol] = await loadModules(modules);
+
+            let geoLayer
+            if(geoJsonLayer && geoJsonLayer.url) {
+              geoLayer= new GeoJSONLayer({url: geoJsonLayer.url, title: 'Stadtteile', geometryType: "ploygon"})
+              geoLayer.renderer = new SimpleRenderer({
+                symbol: new SimpleFillSymbol({
+                  color: [129, 230, 217],
+                  outline: {  // autocasts as new SimpleLineSymbol()
+                    color: [0,0,0, 1],
+                    width: "0.5px"
+                  }
+                })
+              })
+            }
 
             const csvLayer = new CSVLayer({
                 url,
-                title: "Konstanz",
+                title: "Mängel",
                 longitudeField: "lon",
                 latitudeField: "lat",
                 delimiter: ',',
                 popupTemplate: template,
-                objectIdField: 'id'
+                objectIdField: 'id',
+                timeInfo: {
+                  startField: "reported", // name of the date field
+                  interval: {
+                    // set time interval to one day
+                    unit: "hours",
+                    value: 1
+                  }
+                }
             })
 
             csvLayer.renderer = renderer
 
             const map = new WebMap({
-              basemap: {
-                portalItem: {
-                  id: "466f3f43c231453c938c6776777b89e2"
-                }
-              }, 
-              layers: [csvLayer]
+              basemap: cardStyle[colorMode], 
+              layers: [geoLayer, csvLayer].filter(Boolean)
             })
             view = new MapView({
                 map,
-                zoom: 13,
+                zoom: 12,
                 container: ref.current,
-                center: [9.172, 47.68]
+                center: [9.172, 47.68],
+                highlightOptions: {
+                  color: "orange"
+                }
             })
-
+            
             view.ui.add(new Legend({
                 view
             }), "top-right")
 
             setView(view)
+            setLayer(csvLayer)
         }
 
         initMap(mapRef)
 
         return () => view?.destroy()
-    }, [mapRef, url])
+    }, [mapRef, url, colorMode])
 
-    return viewState;
+    return [viewState, layerState];
 }

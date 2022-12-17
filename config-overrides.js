@@ -3,9 +3,14 @@ const path = require("path");
 
 module.exports = function override(config, env) {
     //do stuff with the webpack config...
-
+    console.log(config.module)
     return {
         ...config,
+        module: {
+            rules: [
+                ...config.module.rules,
+            ],
+        },
         resolve: {
             ...config.resolve,
             alias: {

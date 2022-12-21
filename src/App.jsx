@@ -1,8 +1,9 @@
-import { ChakraProvider } from '@chakra-ui/react';
+import { ChakraProvider, Heading } from '@chakra-ui/react';
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import { Layout } from './container/Layout';
+import { Main } from './container/Main';
 import { dataSources } from './datasources';
 
 
@@ -14,6 +15,7 @@ function App() {
         <BrowserRouter>
           <Layout>
             <Routes>
+              <Route path='/' element={<Main />} />
               {dataSources.map(source => <Route key={source.id} path={source.id} element={React.createElement(source.element, {source})} />)}
             </Routes>
           </Layout>

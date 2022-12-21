@@ -7,17 +7,17 @@ import {useLocation} from 'react-router-dom'
 export const Layout = ({children}) => {
     const location = useLocation()
     const { colorMode, toggleColorMode } = useColorMode()
-    debugger
+
     return <Container maxW='full' p={0}>
-        <Grid templateColumns={'repeat(12, 1fr)'}>
-            <GridItem colSpan={12} p={2}>
+        <Grid templateColumns={'repeat(12, 1fr)'} >
+            <GridItem colSpan={12} p={2}  borderBottomColor='gray.400' borderBottomWidth={1} mb={3}>
                 <Box centerContent>
-                    <Heading as='h1' size='xl'>Mängel Visulization</Heading>
+                    <Heading as='h1' size='xl'>Mängel Explorer</Heading>
                     <Switch float={'right'} isChecked={colorMode === 'dark'} colorScheme={colorMode === 'dark' ? 'purple': 'gray'} onChange={toggleColorMode} size='lg' />
                 </Box>
             </GridItem>
-            <GridItem colSpan={3} p={2}>
-                <List spacing={3}>
+            <GridItem colSpan={3} p={2} h='full'>
+                <List spacing={3} h='full'>
                     {dataSources.map(source => (
                     <ListItem key={source.id}>
                         <Button as={Link} to={source.id} width='full' bgColor={location.pathname.endsWith(source.id) ? 'green.400' : 'gray.400'} centerContent>{source.name}</Button>

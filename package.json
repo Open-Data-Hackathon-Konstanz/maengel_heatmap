@@ -2,6 +2,7 @@
   "name": "maengel_heatmap",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://open-data-hackathon-konstanz.github.io/maengel_heatmap/",
   "dependencies": {
     "@arcgis/core": "^4.25.5",
     "@arcgis/webpack-plugin": "4.22.0",

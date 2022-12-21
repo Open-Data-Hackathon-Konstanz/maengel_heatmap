@@ -15,8 +15,8 @@ function App() {
         <BrowserRouter>
           <Layout>
             <Routes>
-              <Route path='/' element={<Main />} />
-              {dataSources.map(source => <Route key={source.id} path={`${process.env.PUBLIC_URL}/${source.id}`} element={React.createElement(source.element, {source})} />)}
+              <Route path={`/maengel_heatmap`} element={<Main />} />
+              {dataSources.map(source => <Route key={source.id} path={`${source.id}`} element={React.createElement(source.element, {source})} />)}
             </Routes>
           </Layout>
         </BrowserRouter>

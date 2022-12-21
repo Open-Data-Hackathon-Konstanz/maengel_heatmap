@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/maengel_heatmap/static/css/main.da142f66.css",
-    "main.js": "/maengel_heatmap/static/js/main.e85cc2f6.js",
+    "main.js": "/maengel_heatmap/static/js/main.0678ba06.js",
     "assets/esri/geometry/support/pe-wasm.wasm": "/maengel_heatmap/assets/esri/geometry/support/pe-wasm.wasm",
     "assets/esri/rest/knowledgeGraph/wasmInterface/arcgis-knowledge-client-core-simd.wasm": "/maengel_heatmap/assets/esri/rest/knowledgeGraph/wasmInterface/arcgis-knowledge-client-core-simd.wasm",
     "assets/esri/rest/knowledgeGraph/wasmInterface/arcgis-knowledge-client-core.wasm": "/maengel_heatmap/assets/esri/rest/knowledgeGraph/wasmInterface/arcgis-knowledge-client-core.wasm",
@@ -6069,10 +6069,10 @@
     "assets/components/assets/icon/blank24.json": "/maengel_heatmap/assets/components/assets/icon/blank24.json",
     "assets/components/assets/icon/blank32.json": "/maengel_heatmap/assets/components/assets/icon/blank32.json",
     "main.da142f66.css.map": "/maengel_heatmap/static/css/main.da142f66.css.map",
-    "main.e85cc2f6.js.map": "/maengel_heatmap/static/js/main.e85cc2f6.js.map"
+    "main.0678ba06.js.map": "/maengel_heatmap/static/js/main.0678ba06.js.map"
   },
   "entrypoints": [
     "static/css/main.da142f66.css",
-    "static/js/main.e85cc2f6.js"
+    "static/js/main.0678ba06.js"
   ]
 }

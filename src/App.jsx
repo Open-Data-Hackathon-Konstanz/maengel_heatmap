@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <ChakraProvider>
-        <BrowserRouter>
+        <BrowserRouter basename='/maengel_heatmap'>
           <Layout>
             <Routes>
               <Route path='/' element={<Main />} />

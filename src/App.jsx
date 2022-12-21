@@ -16,7 +16,7 @@ function App() {
           <Layout>
             <Routes>
               <Route path='/' element={<Main />} />
-              {dataSources.map(source => <Route key={source.id} path={source.id} element={React.createElement(source.element, {source})} />)}
+              {dataSources.map(source => <Route key={source.id} path={`${process.env.PUBLIC_URL}/${source.id}`} element={React.createElement(source.element, {source})} />)}
             </Routes>
           </Layout>
         </BrowserRouter>

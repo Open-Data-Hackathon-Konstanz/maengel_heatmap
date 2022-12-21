@@ -20,7 +20,7 @@ export const Layout = ({children}) => {
                 <List spacing={3} h='full'>
                     {dataSources.map(source => (
                     <ListItem key={source.id}>
-                        <Button as={Link} to={source.id} width='full' bgColor={location.pathname.endsWith(source.id) ? 'green.400' : 'gray.400'} centerContent>{source.name}</Button>
+                        <Button as={Link} to={`/maengel_heatmap/${source.id}`} width='full' bgColor={location.pathname.endsWith(source.id) ? 'green.400' : 'gray.400'} centerContent>{source.name}</Button>
                     </ListItem>
                     ))}
                     
